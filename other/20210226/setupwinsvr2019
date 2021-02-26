@@ -208,8 +208,8 @@
 <li>VMware安装WindowsServer2019，镜像可以从<code>msdn.itellyou.cn</code>上找</li>
 <li>配置网络环境<ul>
 <li>先把服务器设置为固定IP，由于使用的是VMware的NAT模式，所以要先设置下VMware<ul>
-<li>先从主机的网络适配器设置里找到VMnet8，一般情况应该只需要改网关和DNS<img src="./setupwinsvr2019/winsvr-1.png" alt="VMnet8"></li>
-<li>VMware上方-编辑-虚拟网络编辑器，打开后授予管理员权限，按如图修改<img src="./setupwinsvr2019/winsvr-2.png" alt="winsvr2"></li>
+<li>先从主机的网络适配器设置里找到VMnet8，一般情况应该只需要改网关和DNS<img src="/images/winsvr-1.png" alt="winsvr1"></li>
+<li>VMware上方-编辑-虚拟网络编辑器，打开后授予管理员权限，按如图修改<img src="/images/winsvr-2.png" alt="winsvr2"></li>
 </ul>
 </li>
 <li>进入winserver2019，根据需要修改IP，网关跟前面步骤一样，DNS设置成本地IP<code>127.0.0.1</code></li>
