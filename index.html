@@ -166,6 +166,120 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
+        <a href="/GreenHT.github.io/netsafe/20210227/sqlinjectionNotes">SQL注入入门笔记</a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/GreenHT.github.io/netsafe/20210227/sqlinjectionNotes">
+          
+          
+            
+          
+          注入判断数值型__方法：URL后面输入 and 1=1 / and 1=2后页面回显不同__（前提是页面上有回显的地方）  
+当输入1=1时页面正常，1=2时页面出错，说明为数值型注入  
+原理：后台脚本中提交的sql语句为类似 select * from &lt;表名&gt; where id = x 的语句，通过get方式提交用户输入的数值来改变语句中的x，没有引号  
+字符型方法：URL后面
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-02-27 10:38" pubdate>
+              2021-02-27
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/GreenHT.github.io/categories/netsafe/">网络安全</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/GreenHT.github.io/tags/%E7%BD%91%E7%BB%9C/">网络</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/GreenHT.github.io/programming/20210227/phpNotes">PHP学习笔记</a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/GreenHT.github.io/programming/20210227/phpNotes">
+          
+          
+            
+          
+          环境配置Apache​    配置文件：安装目录\apache\conf\httpd.conf   
+
+DocumentRoot：默认站点  
+
+ServerName：设置服务器用于辨识自己的主机名和端口号  
+
+LoadModule：加载模块  
+
+Listen：定义apache监听的端口  
+  搭建基于域名的虚拟主机教程略  
+  *版本不同可能会有区别*  
+
+
+PHP安装目录\php文件
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-02-27 10:34" pubdate>
+              2021-02-27
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/GreenHT.github.io/categories/programming/">编程</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/GreenHT.github.io/tags/%E7%BC%96%E7%A8%8B/">编程</a>
+            
+              <a href="/GreenHT.github.io/tags/%E7%BD%91%E7%BB%9C/">网络</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
         <a href="/GreenHT.github.io/other/20210226/setupwinsvr2019">Windows Server 2019虚拟机搭建域环境记录</a>
       </h1>
 
@@ -175,13 +289,13 @@
           
             
           
-          任务是在虚拟机环境中搭建域环境，使得虚拟机中的win7和winserver互相能ping通，且win7端ping域名也能通，研究了一下午，将遇到的各种问题与解决方案记录一下
+          任务是在虚拟机环境中搭建域环境，使得虚拟机中的win7和winserver互相能ping通，且win7端ping域名也能通，研究了一下午，将遇到的各种问题与解决方案记录一下  
 安装并配置WinServer2019
-VMware安装WindowsServer2019，镜像可以从msdn.itellyou.cn上找
+VMware安装WindowsServer2019，镜像可以从msdn.itellyou.cn上找  
 
-配置网络环境
+配置网络环境  
 
-先把服务器设置为固定IP，由于使用的是VMware的NAT模式，所以要
+先把服务器设置为固定IP，由于使用的是VMware的NAT
         </a>
       </p>
 
@@ -206,11 +320,11 @@ VMware安装WindowsServer2019，镜像可以从msdn.itellyou.cn上找
           <div class="post-meta">
             <i class="iconfont icon-tags"></i>
             
+              <a href="/GreenHT.github.io/tags/%E7%BD%91%E7%BB%9C/">网络</a>
+            
               <a href="/GreenHT.github.io/tags/windows/">windows</a>
             
               <a href="/GreenHT.github.io/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/">虚拟机</a>
-            
-              <a href="/GreenHT.github.io/tags/%E7%BD%91%E7%BB%9C/">网络</a>
             
           </div>
         

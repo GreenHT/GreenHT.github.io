@@ -1,0 +1,721 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/GreenHT.github.io/img/favicon.png">
+  <link rel="icon" type="image/png" href="/GreenHT.github.io/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
+  <meta name="theme-color" content="#4c74a5">
+  <meta name="description" content="">
+  <meta name="author" content="GreenHT">
+  <meta name="keywords" content="">
+  <title>PHP学习笔记 - GreenHT的小本本</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/GreenHT.github.io/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.4.0/styles/rainbow.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/GreenHT.github.io/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"greenht.github.io","root":"/GreenHT.github.io/","version":"1.8.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":"#"},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":false,"onlypost":false},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+  </script>
+  <script  src="/GreenHT.github.io/js/utils.js" ></script>
+  <script  src="/GreenHT.github.io/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/GreenHT.github.io/">&nbsp;<strong>GreenHT的小本本</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/GreenHT.github.io/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/GreenHT.github.io/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/GreenHT.github.io/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/GreenHT.github.io/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/GreenHT.github.io/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="PHP学习笔记">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-02-27 10:34" pubdate>
+        2021年2月27日 上午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      3.7k 字
+    </span>
+  
+
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">PHP学习笔记</h1>
+            
+              <p class="note note-info">
+                
+                  本文最后更新于：7 分钟前
+                
+              </p>
+            
+            <div class="markdown-body">
+              <h2 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h2><h3 id="Apache"><a href="#Apache" class="headerlink" title="Apache"></a>Apache</h3><p>​    配置文件：安装目录\apache\conf\httpd.conf   </p>
+<ul>
+<li><p>DocumentRoot：默认站点  </p>
+</li>
+<li><p>ServerName：设置服务器用于辨识自己的主机名和端口号  </p>
+</li>
+<li><p>LoadModule：加载模块  </p>
+</li>
+<li><p>Listen：定义apache监听的端口  </p>
+<p>  <em>搭建基于域名的虚拟主机教程略</em>  </p>
+<p>  <strong>*版本不同可能会有区别*</strong>  </p>
+</li>
+</ul>
+<h3 id="PHP"><a href="#PHP" class="headerlink" title="PHP"></a>PHP</h3><p>安装目录\php文件夹\  </p>
+<ul>
+<li><p>ext文件夹：拓展包  </p>
+</li>
+<li><p>php5apache---.dll：apache支持包，加入LoadModule中   </p>
+</li>
+<li><p>php.ini-xxx：PHP配置文件，需改为ini文件  </p>
+</li>
+<li><p>php.ini中date.timezone的值改为PRC（中国）  </p>
+<p>  <strong>*版本不同可能会有区别*</strong>  </p>
+</li>
+</ul>
+<h3 id="PHP-Apache"><a href="#PHP-Apache" class="headerlink" title="PHP+Apache"></a>PHP+Apache</h3><p>在httpd.conf中添加：   </p>
+<ol>
+<li>LoadModule php5_module ‘apache支持包路径’  --加载PHP模块  </li>
+<li>PHPIniDir ‘php.ini所在路径’  --加载PHP配置文件  </li>
+<li>AddType application/x-httpd-php .php  --将.php文件分配给PHP解析   </li>
+</ol>
+<p><strong>*版本不同可能会有区别*</strong>  </p>
+<h3 id="MySQL"><a href="#MySQL" class="headerlink" title="MySQL"></a>MySQL</h3><ul>
+<li>安装目录下的my.ini为配置文件   </li>
+<li>访问数据库命令参数：-h 主机地址，-P 端口，-u 用户名，-p 密码  </li>
+</ul>
+<h3 id="PHP-MySQL"><a href="#PHP-MySQL" class="headerlink" title="PHP+MySQL"></a>PHP+MySQL</h3><ol>
+<li>PHP加载MySQL拓展：在php.ini中添加extension=php_mysql.dll，修改extension_dir的值为ext文件夹的绝对路径（PHP版本不同可能有区别）  </li>
+</ol>
+<hr>
+<h2 id="PHP语法"><a href="#PHP语法" class="headerlink" title="PHP语法"></a>PHP语法</h2><h3 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h3><ol>
+<li><p>定义变量不需要规定数据类型  </p>
+</li>
+<li><p>变量名以 “$” 符号开头，只能包含数字、字母、下划线，不能数字开头  </p>
+</li>
+<li><p>使用<code>unset</code>函数清除变量  </p>
+</li>
+<li><p><strong>预定义变量</strong>  </p>
+</li>
+</ol>
+<ul>
+<li>==$_GET==：存储以get方式提交的表单  </li>
+<li>==$_POST==：存储以post方式提交的表单  </li>
+<li>==$_REQUEST==：存储以get或post方式提交的表单  </li>
+<li>==$GLOBALS==：存储PHP中所有全局变量  </li>
+<li>$_SERVER：服务器信息  </li>
+<li>$_SESSIOON：session会话信息  </li>
+<li>$_COOKIE：cookie会话信息  </li>
+<li>$_ENV：环境信息  </li>
+<li>$_FILES：用户上传的文件信息  </li>
+</ul>
+<ol start="5">
+<li><p>可变变量：一个变量的内容可作为另一变量的名字  </p>
+ <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-variable">$a</span>=<span class="hljs-string">&#x27;b&#x27;</span>;<br><span class="hljs-variable">$b</span>=<span class="hljs-string">&#x27;bb&#x27;</span>;<br><span class="hljs-comment">//   $$a ==&#x27;bb&#x27;</span><br></code></pre></td></tr></table></figure>
+</li>
+<li><p>变量赋值与值传递   </p>
+ <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-variable">$a</span> = <span class="hljs-number">1</span>;<br><span class="hljs-variable">$b</span> = <span class="hljs-variable">$a</span>;	<span class="hljs-comment">//值传递，将a值复制一份给b</span><br><span class="hljs-variable">$c</span> = &amp;<span class="hljs-variable">$a</span>;	<span class="hljs-comment">//引用传递，指向同一个值（内存空间）</span><br></code></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h3 id="常量"><a href="#常量" class="headerlink" title="常量"></a>常量</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-comment">//使用define函数定义</span><br>define(<span class="hljs-string">&#x27;PI&#x27;</span>,<span class="hljs-number">3.14</span>,(<span class="hljs-literal">false</span>));	<span class="hljs-comment">//最后的false表示大小写敏感，可省略；若定义为true则大小写不敏感</span><br><br><span class="hljs-comment">//使用const关键字定义</span><br><span class="hljs-keyword">const</span> PII = <span class="hljs-number">3</span>;<br><br><span class="hljs-comment">//使用define函数定义特殊常量</span><br>define(<span class="hljs-string">&#x27;&gt;_&lt;&#x27;</span>,<span class="hljs-string">&#x27;smile&#x27;</span>);<br><br><span class="hljs-comment">//使用常量</span><br><span class="hljs-keyword">echo</span> PI;<br><br><span class="hljs-comment">//用constant函数访问常量</span><br><span class="hljs-keyword">echo</span> constant(<span class="hljs-string">&#x27;&gt;_&lt;&#x27;</span>);<br></code></pre></td></tr></table></figure>
+
+
+
+<ol>
+<li>常量名字不用$符号（会被系统当作变量）</li>
+<li>常量名由字母、数字、下划线组成，不能以数字开头，通常以大写字母为主（与变量区分）</li>
+<li>使用<code>define</code>方式定义的常量名中可以使用一些特殊字符，但访问时只能用<code>constant</code>函数  </li>
+<li><strong>系统常量</strong>  <ul>
+<li>PHP_VERSION：PHP版本号  </li>
+<li>==__DIR__==：当前php脚本所在绝对路径  </li>
+<li>==__FILE__==：当前php脚本所在绝对路径加文件名  </li>
+<li>__LINE__：当前语句（引用该常量的语句）所在行  </li>
+<li>__NAMESPACE__：当前所属命名空间  </li>
+<li>__CLASS__：当前所属的类  </li>
+<li>__METHOD__：当前所属的方法  </li>
+</ul>
+</li>
+</ol>
+<h3 id="数据类型与运算符"><a href="#数据类型与运算符" class="headerlink" title="数据类型与运算符"></a>数据类型与运算符</h3><h4 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h4><ul>
+<li><p>简单（基本）数据类型  </p>
+<ul>
+<li><p>整型：int，4字节，表示整数，默认有符号  </p>
+  <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-variable">$a</span> = <span class="hljs-number">120</span>;	<span class="hljs-comment">//十进制</span><br><span class="hljs-variable">$b</span> = <span class="hljs-number">0b110</span>;		<span class="hljs-comment">//二进制</span><br><span class="hljs-variable">$c</span> = <span class="hljs-number">0120</span>;		<span class="hljs-comment">//八进制</span><br><span class="hljs-variable">$d</span> = <span class="hljs-number">0x12a</span>;		<span class="hljs-comment">//十六进制</span><br><span class="hljs-comment">//输出时默认为十进制，进制间转换可用函数，如：dexbin()为十进制转二进制</span><br></code></pre></td></tr></table></figure>
+
+</li>
+<li><p>浮点型：float/double，8字节，表示小数或整型存不下的整数   </p>
+</li>
+<li><p>字符串型：string，大小按实际长度分配，表示字符串   </p>
+</li>
+<li><p>布尔类型：bool，表示true和false   </p>
+</li>
+</ul>
+</li>
+<li><p>复合数据类型   </p>
+<ul>
+<li>对象类型：object，存放对象   </li>
+<li>数组类型：array，存放数组（一次性）  </li>
+</ul>
+</li>
+<li><p>特殊数据类型  </p>
+<ul>
+<li>资源类型：resource，存放资源数据（PHP外部数据，如数据库、文件）  </li>
+<li>空类型：NULL  </li>
+</ul>
+</li>
+<li><p>数据类型的转换  </p>
+<ul>
+<li>其他类型转bool类型：除 0，“0”，NULL，空字符串 外，均为true  </li>
+<li>bool类型转数值：true为1，false为0  </li>
+<li>字符串类型转数值：以字母开头的字符串永远为0；以数字开头的字符串，数值为遇到字母或第二个小数点前为止  </li>
+<li>强制类型转换：（需转换的类型）+需转换的变量或表达式，不改变原变量的数据类型  </li>
+</ul>
+</li>
+<li><p>数据类型的判断  </p>
+<ul>
+<li><p><del>通过以is_开头后跟数据类型的函数判断：is_类型(变量名)。函数返回值用var_dump函数查看。</del>  </p>
+</li>
+<li><p>用<code>var_dump</code>函数查看：var_dump(变量名)  </p>
+</li>
+<li><p>用一组可获取或设定类型的函数  </p>
+  <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-keyword">echo</span> gettype(<span class="hljs-variable">$a</span>);	<span class="hljs-comment">//获取数据类型</span><br>settype(<span class="hljs-variable">$a</span>,<span class="hljs-string">&#x27;int&#x27;</span>);	<span class="hljs-comment">//设定数据类型，与强制类型转换不同，会改变原变量的数据类型</span><br></code></pre></td></tr></table></figure>
+</li>
+<li><pre><code class="php">  empty();    //判断数据是否为空(NULL)或0，为空返回true，反之false
+  isset();    //判断变量是否存在，存在返回true，反之false
+  <figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs awk"><br>		<br><br><span class="hljs-comment">#### 运算符  </span><br><br>* 赋值、算术运算符：赋值运算<span class="hljs-string">&quot;\=&quot;</span>，加法<span class="hljs-string">&quot;\+&quot;</span>，减法<span class="hljs-string">&quot;\-&quot;</span>，乘法<span class="hljs-string">&quot;\*&quot;</span>，除法<span class="hljs-string">&quot;/&quot;</span>，取余运算<span class="hljs-string">&quot;%&quot;</span>，自加运算<span class="hljs-string">&quot;\+\+&quot;</span>，自减运算<span class="hljs-string">&quot;\-\-&quot;</span>  <br><br>* 比较运算符  <br><br>	* \&gt;,\&lt;,\&gt;\=,\&lt;\=,\=\=,\!\=：大于，小于，大于等于，小于等于，等于，不等于  <br><br>	* \=\=\=,\!\=\=：全等于（数据大小与类型都相同），不全等于（大小或类型不同）  <br><br>		```php<br>		<span class="hljs-variable">$a</span> = <span class="hljs-string">&#x27;123&#x27;</span>;<br>		<span class="hljs-variable">$b</span> = <span class="hljs-number">123</span>;<br>		var_dump(<span class="hljs-variable">$a</span> == <span class="hljs-variable">$b</span>);		<span class="hljs-regexp">//</span>返回true<br>		var_dump(<span class="hljs-variable">$a</span> === <span class="hljs-variable">$b</span>);		<span class="hljs-regexp">//</span>返回false<br></code></pre></td></tr></table></figure>
+</code></pre>
+</li>
+</ul>
+</li>
+<li><p>逻辑运算符：逻辑与”&amp;&amp;“，逻辑或”||“，逻辑非”!“  </p>
+</li>
+<li><p>连接运算符：”.“，将两个字符串拼接在一起；”.=“，字符串拼接后赋值给左边  </p>
+</li>
+<li><p>错误抑制符：”@”，在可能出错的语句前加上@符号可关闭错误回显  </p>
+</li>
+<li><p>三目运算符：”表达式1 ? 表达式2 : 表达式3”，表达式1成立时执行表达式2，否则执行表达式3  </p>
+</li>
+<li><p>位运算符：”&amp;“按位与，两个位都为1则为1；”|“按位或，两个位有一个为1则为1；”~“按位非，将位取反；”^”按位异或，两个位相同为0，不同为1；”&lt;&lt;“按位左移，右边补0；”&gt;&gt;“，按位右移，左边补符号位内容  </p>
+</li>
+</ul>
+<h3 id="流程控制"><a href="#流程控制" class="headerlink" title="流程控制"></a>流程控制</h3><ul>
+<li><p>if结构，while循环，du-while循环，for循环，switch结构与C语言大体相同  </p>
+</li>
+<li><p><strong>流程控制替代语法</strong>：增强PHP+HTML的易读性与美观性  </p>
+<p>  例：打印九九乘法表  </p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs php+HTML">&lt;table border&#x3D;1&gt;<br>    &lt;?php for($i &#x3D; 1;$i &lt; 10;$i++):		&#x2F;&#x2F;for循环的大括号可由 : 与 endfor; 代替 ?&gt;<br>    &lt;tr&gt;<br>        &lt;?php for($j &#x3D; 1;$j &lt;&#x3D; $i;$j++): ?&gt;<br>        &lt;td&gt;<br>            &lt;?php echo $i . &#39; * &#39; . $j . &#39; &#x3D; &#39;. $i * $j; ?&gt;<br>        &lt;&#x2F;td&gt;<br>        &lt;?php endfor;?&gt;<br>    &lt;&#x2F;tr&gt;<br>    &lt;?php endfor;?&gt;<br>&lt;&#x2F;table&gt;<br>&lt;!--	相似的结构还有if,switch,while,foreach	--&gt;<br></code></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="文件包含"><a href="#文件包含" class="headerlink" title="文件包含"></a>文件包含</h3><p>实质上是将文件中内容嵌入另一文件中相应位置  </p>
+<ol>
+<li><p>文件包含的两种方法  </p>
+<ul>
+<li>向上包含：使用被包含文件中的数据  </li>
+<li>向下包含：将本文件中的数据通过被包含文件中的方式显示  </li>
+</ul>
+</li>
+<li><p>文件包含的四种形式  </p>
+</li>
+</ol>
+<ul>
+<li><p>include , require：包含文件。语法：include ‘文件名’; 或 include(‘文件名’)，文件不在当前目录时要用绝对路径（安全）或相对路径（高效），下同  </p>
+<p>  _注：绝对路径：本地绝对路径（从磁盘根目录开始）与网络绝对路径（相对于网站主机名对应的路径）；相对路径：_相对于当前文件的路径，./ 表示当前目录，../表示上级目录  </p>
+</li>
+<li><p>include_once , require_once：系统判断是否已包含文件，使得对应文件只包含一次  </p>
+</li>
+</ul>
+<ol start="3">
+<li><p>include与require区别  </p>
+<p> 在包含文件出错时，include报错级别较低，后面代码会继续执行；require报错级别较高，代码会立即停止执行  </p>
+</li>
+</ol>
+<h3 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h3><h4 id="函数定义"><a href="#函数定义" class="headerlink" title="函数定义"></a>函数定义</h4><p>function，一种语法结构，将一个代码块封装到一个结构中。  </p>
+<p>关键点：function关键字，函数名，参数，函数体，返回值  </p>
+<p>基本语法：  </p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-function"><span class="hljs-keyword">function</span> 函数名(<span class="hljs-params">[参数]</span>)</span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-comment">//函数体</span><br>    <span class="hljs-keyword">return</span> 结果;		<span class="hljs-comment">//返回值</span><br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>注意：  </p>
+<ol>
+<li><p>实参不能少于形参个数，多余参数函数不会使用。函数定义时可为形参初始化一个默认值，使得提供参数过少时函数可正常执行。例：  </p>
+ <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">test</span>(<span class="hljs-params"><span class="hljs-variable">$num1</span>,<span class="hljs-variable">$num2</span>=<span class="hljs-number">0</span></span>)		//有默认值的参数应放在最右边</span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-keyword">echo</span> <span class="hljs-variable">$num1</span>+<span class="hljs-variable">$num2</span>;		<span class="hljs-comment">//传入参数不足时使用默认值0</span><br>&#125;<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>当函数想改变传入实参存储的值时，在定义函数时形参前加上”&amp;“取地址符号，即地址传递  </p>
+</li>
+<li><p>return返回值可在函数中使用，也可以在文件中使用（包含文件的返回值）,return后的语句不执行  </p>
+</li>
+<li><p>如果有变量的值恰好为函数名，那么调用函数可以通过变量+()，如：$变量([参数])  </p>
+</li>
+</ol>
+<h4 id="作用域"><a href="#作用域" class="headerlink" title="作用域"></a>作用域</h4><ol>
+<li>全局变量：在函数外部定义的变量，函数体内不能直接访问，需要传值  </li>
+<li>局部变量：在函数内部定义的变量，只能在函数体内使用  </li>
+<li>超全局变量：一些预定义变量，如$GLOBALS等  </li>
+<li>在函数内使用global关键字定义的变量，在函数外部也能使用（系统自动在全局区定义相同变量，并将两个变量指向同一内存空间）；若函数外部存在同名变量，系统自动将两个变量合并（直接指向外部全局变量内存空间）  </li>
+<li>静态变量：在函数中用static关键字定义的变量（在定义时应同时赋值），在函数调用结束后，内存空间不会被清空，在函数下次调用时仍可访问之前的数据，且不会被重复初始化  </li>
+</ol>
+<h4 id="匿名函数"><a href="#匿名函数" class="headerlink" title="匿名函数"></a>匿名函数</h4><p>没有名字的函数  </p>
+<ul>
+<li><p>基本语法：  </p>
+  <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-comment">//定义基本匿名函数</span><br><span class="hljs-variable">$func</span> = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-keyword">echo</span> <span class="hljs-string">&#x27;hello world&#x27;</span>;<br>&#125;;		<span class="hljs-comment">//此处应有分号</span><br><span class="hljs-comment">//调用匿名函数</span><br><span class="hljs-variable">$func</span>()<br></code></pre></td></tr></table></figure>
+
+</li>
+<li><p>变量保存匿名函数，本质上得到的是一个对象（closure）  </p>
+</li>
+</ul>
+<h4 id="常用系统函数"><a href="#常用系统函数" class="headerlink" title="常用系统函数"></a>常用系统函数</h4><ol>
+<li>有关输出的函数  <ul>
+<li><code>print()</code>：类似于echo，返回值为1，可以不用括号  </li>
+<li><code>print_r()</code>：类似于var_dump，但不会输出数据类型，只会输出值（常用于打印数组）  </li>
+</ul>
+</li>
+<li>有关时间的函数  <ul>
+<li><code>date()</code>：按照指定格式格式化时间戳，没有指定格式将按照默认格式。<a target="_blank" rel="noopener" href="https://www.runoob.com/php/func-date-date.html">具体参数</a>  </li>
+<li><code>time()</code>：获取当前时间对应的时间戳（无参数）  </li>
+<li><code>microtime()</code>：获取微秒级别的时间  </li>
+</ul>
+</li>
+<li>有关数学的函数  <ul>
+<li><code>max()</code>，<code>min()</code>：分别返回参数中最大的值和最小的值  </li>
+<li><code>rand([参数1],参数2)</code>：得到一个在区间内的随机数（包括两个参数），参数1可不提供  </li>
+<li><code>mt_rand()</code>：与rand函数相同，但效率更高  </li>
+<li><code>round()</code>：四舍五入  </li>
+<li><code>ceil()</code>：向上取整，得到比参数大的最小整数  </li>
+<li><code>floor()</code>：向下取整，得到比参数小的最大整数  </li>
+<li><code>pow(参数1,参数2)</code>：得到参数1的参数2次方  </li>
+<li><code>abs()</code>：绝对值  </li>
+<li><code>sqrt()</code>：平方根  </li>
+</ul>
+</li>
+<li>有关函数的函数  <ul>
+<li><code>function_exists()</code>：判断指定函数名字是否在内存中存在  </li>
+<li><code>func_get_arg(n)</code>：在自定义函数中去获取第n-1 个参数  </li>
+<li><code>func_get_args()</code>：在自定义函数中去获取所有参数（返回一个数组）  </li>
+<li><code>func_num_args()</code>：获取当前自定义函数的参数数量  </li>
+</ul>
+</li>
+</ol>
+<h3 id="错误处理"><a href="#错误处理" class="headerlink" title="错误处理"></a>错误处理</h3><h4 id="错误代号"><a href="#错误代号" class="headerlink" title="错误代号"></a>错误代号</h4><p>所有错误代码会被系统定义为系统常量，可以直接使用  </p>
+<ol>
+<li>系统错误  <ul>
+<li>E_PARSE：编译错误  </li>
+<li>E_ERROR：fatal error，致命错误，会导致代码不能正确执行（出错的位置断掉）  </li>
+<li>E_WARNING：warning，警告错误，不会影响代码执行，但可能会得到意想不到的结果  </li>
+<li>E_NOTICE：通知错误，不会影响代码执行  </li>
+</ul>
+</li>
+<li>用户错误：E_USER_ERROR，E_USER_WARNING，E_USER_NOTICE，用户在使用自定义错误触发的时候会使用到（系统不会用到）  </li>
+<li>其他：E_ALL，代表所有错误，建议在开发环境中使用  </li>
+</ol>
+<p>所有以E开头的错误常量（代号）都存储在一个字节内，每种占据一个位，所以可以通过位运算来进行一些错误的控制，例：  </p>
+<p>排除通知级别的错误：E_ALL &amp; ~E_NOTICE  </p>
+<p>只要警告和通知级别：E_WARNING | E_NOTICE  </p>
+<h4 id="错误触发"><a href="#错误触发" class="headerlink" title="错误触发"></a>错误触发</h4><ul>
+<li>程序运行时触发：主要针对代码语法错误和运行时错误，由系统自动生成  </li>
+<li>人为触发：人为使用对应判断代码来触发错误提示  <ul>
+<li><code>trigger_error(提示内容,[错误级别])</code>：人为触发错误，错误级别默认为E_USER_NOTICE，不影响下面执行  </li>
+</ul>
+</li>
+</ul>
+<h3 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h3><h4 id="字符串定义"><a href="#字符串定义" class="headerlink" title="字符串定义"></a>字符串定义</h4><ol>
+<li><p>普通定义：使用单引号或双引号包裹  </p>
+</li>
+<li><p>结构化定义  </p>
+<p> nowdoc定义  </p>
+ <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-variable">$str</span> = &lt;&lt;&lt;<span class="hljs-string">&#x27;ABC&#x27;</span>	<br>					<span class="hljs-comment">//上边界符，可随意命名，后面不能有内容</span><br>****内容****<br>ABC;		<span class="hljs-comment">//下边界符必须顶格</span><br></code></pre></td></tr></table></figure>
+
+<p> heredoc定义  </p>
+ <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-variable">$str</span> = &lt;&lt;&lt;CBA<br>****内容****<br>CBA;<br></code></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<p>注意：  </p>
+<ol>
+<li>普通定义中，使用单引号包裹的字符串只能识别 \&#39; 转义字符，其他转义字符原样输出；使用双引号包裹的字符串只识别不了 \&#39; 转义字符，其他转义字符按转义后形态输出——也就是说，双引号包裹的字符串中当$符号未转义时，可以用来解析变量（前提是系统能区分变量与其后面的字符串，而不是连在一起，比如$a bcd与$abcd）  </li>
+<li>结构化定义中，边界符之间的内容全部原样输出  </li>
+</ol>
+<h4 id="字符串长度问题"><a href="#字符串长度问题" class="headerlink" title="字符串长度问题"></a>字符串长度问题</h4><ol>
+<li>基本函数<code>strlen()</code>：得到字符串的长度（单位：字节）  </li>
+<li>多字节字符串长度问题：中文在utf-8字符集下占3个字节  </li>
+<li>多字节字符串拓展模块：mbstring拓展  <ul>
+<li>字符串长度函数<code>mb_strlen(string $str[,string $encoding])</code>，第二个参数为指定字符集，未指定则为默认的ASCII  </li>
+</ul>
+</li>
+</ol>
+<h4 id="字符串相关函数"><a href="#字符串相关函数" class="headerlink" title="字符串相关函数"></a>字符串相关函数</h4><ul>
+<li>转换函数：implode(),explode(),str_split()  </li>
+<li>截取函数：trim(),ltrim(),rtrim(),substr(),strstr()  </li>
+<li>大小转换函数：strtolower(),strtoupper(),ucfirst()  </li>
+<li>查找函数：strpos(),strrpos()  </li>
+<li>替换函数：str_replace()  </li>
+<li>格式化函数：printf(),sprintf()  </li>
+<li>其他：str_repeat(),str_shuffle()  </li>
+</ul>
+<h3 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h3><h4 id="数组定义"><a href="#数组定义" class="headerlink" title="数组定义"></a>数组定义</h4><ol>
+<li><p>使用array关键字（常用）  </p>
+ <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-variable">$a</span> = <span class="hljs-keyword">array</span>(元素<span class="hljs-number">1</span>,元素<span class="hljs-number">2</span>,......);<br><span class="hljs-variable">$b</span> = <span class="hljs-keyword">array</span>(下标=&gt;元素,......);<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>使用中括号包裹数据  </p>
+ <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-variable">$a</span> = [元素<span class="hljs-number">1</span>,元素<span class="hljs-number">2</span>,......]；<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>给变量加上中括号  </p>
+ <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-variable">$a</span>[] = 值;<br><span class="hljs-variable">$a</span>[下标] = 值;<br></code></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<p>注意：  </p>
+<ol>
+<li>下标可以为整数或字符串，可以混用  </li>
+<li>元素顺序以放入时顺序为准，与下标无关  </li>
+<li>特殊值下标：true——1，false——0，NULL——“”   </li>
+<li>php中数组元素没有类型限制，没有长度限制  </li>
+</ol>
+<p>PHP多维数组：即数组元素也是数组，建议不超过三维  </p>
+<h4 id="数组遍历"><a href="#数组遍历" class="headerlink" title="数组遍历"></a>数组遍历</h4><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-keyword">foreach</span>($数组 <span class="hljs-keyword">as</span> [$下标 =&gt;] $值)&#123;<br>    <span class="hljs-comment">//输出函数</span><br>&#125;<br><span class="hljs-comment">//例：</span><br><span class="hljs-keyword">foreach</span>(<span class="hljs-variable">$arr</span> <span class="hljs-keyword">as</span> <span class="hljs-variable">$k</span> =&gt; <span class="hljs-variable">$v</span>)<br>&#123;<br>    <span class="hljs-keyword">echo</span> <span class="hljs-variable">$k</span> , <span class="hljs-string">&#x27;==&#x27;</span> , <span class="hljs-variable">$v</span>		<span class="hljs-comment">//$k,$v为函数内变量</span><br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h4 id="数组相关函数"><a href="#数组相关函数" class="headerlink" title="数组相关函数"></a>数组相关函数</h4><ol>
+<li>排序函数：sort(),rsort(),arsort(),ksort(),shuffle()  </li>
+<li>指针函数：reset(),end(),next(),prev(),current(),key()  </li>
+<li>其他函数：count(),array_push(),array_pop(),array_shift(),array_unshift(),array_reverse(),in_array(),array_keys(),array_values()  </li>
+</ol>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/GreenHT.github.io/categories/programming/">编程</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/GreenHT.github.io/tags/%E7%BC%96%E7%A8%8B/">编程</a>
+                    
+                      <a class="hover-with-bg" href="/GreenHT.github.io/tags/%E7%BD%91%E7%BB%9C/">网络</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/GreenHT.github.io/netsafe/20210227/sqlinjectionNotes">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">SQL注入入门笔记</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/GreenHT.github.io/other/20210226/setupwinsvr2019">
+                        <span class="hidden-mobile">Windows Server 2019虚拟机搭建域环境记录</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+<!-- SCRIPTS -->
+
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
+<script  src="/GreenHT.github.io/js/debouncer.js" ></script>
+<script  src="/GreenHT.github.io/js/events.js" ></script>
+<script  src="/GreenHT.github.io/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.0/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.0/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js" ></script>
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/GreenHT.github.io/js/boot.js" ></script>
+
+
+
+</body>
+</html>
