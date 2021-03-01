@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>Git学习笔记</title>
+      <link href="/GreenHT.github.io/other/20210301/gitNotes"/>
+      <url>/GreenHT.github.io/other/20210301/gitNotes</url>
+      
+        <content type="html"><![CDATA[<p>Git是一个分布式版本控制工具，与集中式的SVN区别开</p><p>Git的大致流程如图</p><p><img src="/images/git1.png" alt="Git-1"></p><ul><li>先从远程仓库将代码克隆（Clone）到本地仓库</li><li>要干活的时候就把代码提取（checkout）到工作区，弄完以后暂存到暂存区，最后统一保存本地仓库里</li><li>可以将成果同步（Push）到远程仓库</li><li>可以把别人的修改同步（Pull）到本地</li></ul><h2 id="仓库管理基本操作（本地）">仓库管理基本操作（本地）</h2><ol><li><p>在目标文件夹中初始化仓库    <code>git init</code></p></li><li><p>查看当前状态    <code>git status</code></p></li><li><p>将修改完成的文件添加到暂存区    <code>git add 文件名</code>    <code>git add 文件名1 文件名2 文件名3……</code>    <code>git add .</code>(添加当前目录)</p></li><li><p>提交到本地仓库（版本库）    <code>git commit -m &quot;注释内容&quot;</code>    注释内容为每次提交操作的记录</p></li><li><p>版本回退</p><ul><li><p>查看版本，确定版本号    <code>git log</code>    <code>git log --pretty=oneline</code></p><p><img src="/images/git2.png" alt="Git-2"></p><p>图中的黄色字符串（即commit id）为版本号</p></li><li><p>回退到某个版本    <code>git reset --hard 版本号</code>    版本号至少输4位</p><p>**注意：**查看历史记录只能查看当前状态之前的版本，即回退之后较新的版本号将会查询不到，想撤销回退操作只能通过查看历史操作</p></li><li><p>查看历史操作    <code>git reflog</code></p></li></ul></li></ol><h2 id="远程仓库操作">远程仓库操作</h2><p><strong>基于https协议：</strong></p><ol><li>将bash命令行cd到工作目录下（此步可省略）</li><li>复制远程仓库的https地址</li><li>使用<code>git clone [https地址]</code></li><li>cd到新生成的目录中</li><li>在仓库中做对应操作（提交到暂存区，提交到本地仓库，提交到远程仓库<code>git push</code>，拉取远程仓库<code>git pull</code>）</li></ol><p>第一次向远程仓库提交时会提示无权限，需要向git的配置文件中添加用户名和密码信息</p><p>文件位置：<code>./.git/config</code></p><p>修改内容：将url后面的地址中加上用户名和密码使得地址格式为<code>https://用户名:密码@github.com/……</code></p><p><em>小技巧：每天第一件事为git pull，每天最后一件事为git push</em></p><p><strong>注：新版的git只需要登陆一次，后续无需再添加用户名信息</strong></p><p><strong>基于SSH协议：</strong></p><ol><li><p>需要先安装openssh<code>ssh-keygen -t rsa -C &quot;注册邮箱&quot;</code></p></li><li><p>在GitHub中上传公钥</p><p><img src="/images/git3.png" alt="Git-3"></p><p>若第一步中未修改的话，进入<code>C:\Users\admin\.ssh\</code>目录中，用文本编辑器打开<code>id_rsa.pub</code>文件，将内容复制到GitHub中（标题随意）</p></li><li><p>正常使用git（同https）</p></li></ol><h2 id="分支管理">分支管理</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash">git branch<span class="hljs-comment">#查看分支，前面带*的是当前分支</span><br>git branch 分支名<span class="hljs-comment">#创建分支</span><br>git checkout 分支名<span class="hljs-comment">#切换分支</span><br>git branch -d 分支名<span class="hljs-comment">#删除分支</span><br>git merge 被合并的分支名<span class="hljs-comment">#合并分支，将被合并的分支合并到当前分支中</span><br></code></pre></td></tr></table></figure><h2 id="冲突的产生与解决">冲突的产生与解决</h2><p>**冲突的产生：**在没有执行git pull的情况下修改内容并执行了git push</p><p><img src="/images/git4.png" alt="Git-4"></p><p>**解决：**先执行git pull，在完成内容重新整理（git会自动合并冲突）后再git push</p><p><img src="/images/git5.png" alt="Git-5"></p><p><img src="/images/git6.png" alt="Git-6"></p><h2 id="忽略文件">忽略文件</h2><p>有一些文件万年也不会动的，并不需要每次提交；或者有一些文件我们并不想提交，可以使用忽略文件</p><p><strong>方法：</strong> 在本地仓库的目录下新建文件名为<code>.gitignore</code>，内容为需要忽略的文件和文件夹</p><p><strong>注意：Windows下可能无法创建此文件，可以使用bash命令行通过touch创建</strong></p><p>规则写法：</p><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs awk"><span class="hljs-regexp">/founder/</span><span class="hljs-comment">#过滤整个文件夹</span><br>*.zip<span class="hljs-comment">#过滤所有zip类型文件，其他类型同理</span><br><span class="hljs-regexp">/founder/m</span>ain.c<span class="hljs-comment">#过滤某个具体文件</span><br>!main.c<span class="hljs-comment">#不过滤某个具体文件</span><br></code></pre></td></tr></table></figure><h2 id="好用的图形化工具">好用的图形化工具</h2><ol><li>GitHub for desktop--GitHub官方出品</li><li>source tree</li><li>TortoiseGit，同时其公司还开发有TortoiseSVN用于SVN版本管理系统</li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> 其他 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 编程 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>SQL注入入门笔记</title>
       <link href="/GreenHT.github.io/netsafe/20210227/sqlinjectionNotes"/>
       <url>/GreenHT.github.io/netsafe/20210227/sqlinjectionNotes</url>
@@ -72,11 +97,11 @@
       
         <tags>
             
+            <tag> 网络 </tag>
+            
             <tag> windows </tag>
             
             <tag> 虚拟机 </tag>
-            
-            <tag> 网络 </tag>
             
         </tags>
       
