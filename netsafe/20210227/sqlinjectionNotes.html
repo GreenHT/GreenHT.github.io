@@ -209,27 +209,27 @@
             
               <p class="note note-info">
                 
-                  本文最后更新于：2 天前
+                  本文最后更新于：4 天前
                 
               </p>
             
             <div class="markdown-body">
-              <h2 id="注入判断">注入判断</h2>
-<h3 id="数值型">数值型</h3>
+              <h2 id="注入判断"><a class="header-anchor" href="#注入判断">¶</a>注入判断</h2>
+<h3 id="数值型"><a class="header-anchor" href="#数值型">¶</a>数值型</h3>
 <p><strong>方法：URL后面输入 and 1=1 / and 1=2后页面回显不同</strong>（前提是页面上有回显的地方）</p>
 <p>当输入1=1时页面正常，1=2时页面出错，说明为数值型注入</p>
 <p>原理：后台脚本中提交的sql语句为类似 select * from &lt;表名&gt; where id = x 的语句，通过get方式提交用户输入的数值来改变语句中的x，没有引号</p>
-<h3 id="字符型">字符型</h3>
+<h3 id="字符型"><a class="header-anchor" href="#字符型">¶</a>字符型</h3>
 <p><strong>方法：URL后面输入正常值后，在后面加上用单引号、双引号、括号等一个或两个的组合（一般是单引号）</strong></p>
 <p>在后面加上单引号后页面报错，在后面再加上&quot;--+&quot;后页面恢复正常，说明为字符型注入</p>
 <p>原理：后台脚本中提交的sql语句为类似SELECT * FROM &lt;表名&gt; WHERE id=‘x’，可以看到id后面的内容是被引号包裹的，注入时需要输入相应的引号来把原来的引号截胡，再把后面的多余引号注释掉</p>
 <hr>
-<h2 id="开始注入">开始注入</h2>
-<h3 id="判断字段数">判断字段数</h3>
+<h2 id="开始注入"><a class="header-anchor" href="#开始注入">¶</a>开始注入</h2>
+<h3 id="判断字段数"><a class="header-anchor" href="#判断字段数">¶</a>判断字段数</h3>
 <p>字段数，个人理解为返回结果中的列数，一般使用order by语句判断，将语句直接拼接在用户输入的数值后面，当order by后面的数字最大且不报错时即为字段数，这里使用sqli-labs做例子</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs http">http://127.0.0.1/sqli/Less-1/index.php?id=1 order by 3<br></code></pre></td></tr></table></figure>
 <p>当大于3时页面报错，可知字段数为3</p>
-<h3 id="判断显示位">判断显示位</h3>
+<h3 id="判断显示位"><a class="header-anchor" href="#判断显示位">¶</a>判断显示位</h3>
 <p>显示位，就是页面上显示的数据是数据库返回的数据中的第几个，一般用联合查询判断，以sqli-labs为例</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs http">http://127.0.0.1/sqli/Less-1/index.php?id=-1&#x27; union select 1,2,3--+<br></code></pre></td></tr></table></figure>
 <ol>
@@ -238,8 +238,8 @@
 </ol>
 <p><img src="/images/pic1.png" alt="result"></p>
 <p>如图，页面将2和3显示出来了，说明返回的数据中的3个字段只显示后两个，所以联合查询语句中的2和3处可以替换为需要查询的内容了</p>
-<h3 id="获取数据">获取数据</h3>
-<h4 id="常用sql语句">常用sql语句</h4>
+<h3 id="获取数据"><a class="header-anchor" href="#获取数据">¶</a>获取数据</h3>
+<h4 id="常用sql语句"><a class="header-anchor" href="#常用sql语句">¶</a>常用sql语句</h4>
 <ul>
 <li>联合查询union select，注意应构造一个绝对错误的条件才会执行后面的内容</li>
 <li>group_concat(列名)，将这一列的内容拼接在一个字符串里</li>
@@ -250,7 +250,7 @@
 <li>group_concat(concat_ws(seperator,str1,str2))：将多行查询结果以逗号分隔全部输出，每一行的结果可用设置的分隔符作字段的间隔</li>
 </ul>
 <p>更多语句可以看看这位大佬的博客<a target="_blank" rel="noopener" href="https://blog.csdn.net/chest_/article/details/100142391">点击传送</a></p>
-<h4 id="常用MySQL位置">常用MySQL位置</h4>
+<h4 id="常用MySQL位置"><a class="header-anchor" href="#常用MySQL位置">¶</a>常用MySQL位置</h4>
 <p>information_schema数据库，存放MySQL中的一切参数</p>
 <ul>
 <li>Tables表，存放数据表信息
@@ -264,7 +264,7 @@
 </ul>
 </li>
 </ul>
-<h3 id="报错注入">报错注入</h3>
+<h3 id="报错注入"><a class="header-anchor" href="#报错注入">¶</a>报错注入</h3>
 <p>前提：页面无显示位但有执行错误信息输出位，且服务器端开启错误显示</p>
 <p>常用函数：</p>
 <ol>

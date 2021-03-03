@@ -209,13 +209,13 @@
             
               <p class="note note-info">
                 
-                  本文最后更新于：2 天前
+                  本文最后更新于：4 天前
                 
               </p>
             
             <div class="markdown-body">
               <p>任务是在虚拟机环境中搭建域环境，使得虚拟机中的win7和winserver互相能ping通，且win7端ping域名也能通，研究了一下午，将遇到的各种问题与解决方案记录一下</p>
-<h2 id="安装并配置WinServer2019">安装并配置WinServer2019</h2>
+<h2 id="安装并配置WinServer2019"><a class="header-anchor" href="#安装并配置WinServer2019">¶</a>安装并配置WinServer2019</h2>
 <ol>
 <li>VMware安装WindowsServer2019，镜像可以从<code>msdn.itellyou.cn</code>上找</li>
 <li>配置网络环境
@@ -236,13 +236,13 @@
 </ul>
 </li>
 </ol>
-<h2 id="配置win7端">配置win7端</h2>
+<h2 id="配置win7端"><a class="header-anchor" href="#配置win7端">¶</a>配置win7端</h2>
 <ol>
 <li>首先修改IP设置，注意将DNS改成服务器的IP就行</li>
 <li>打开网络设置，提示打开网络发现时点允许</li>
 <li>在计算机属性里将win7加入域，域名是前面自己命名的，用户名密码是配置域管理时候设置的</li>
 </ol>
-<h2 id="关于连接外网的问题">关于连接外网的问题</h2>
+<h2 id="关于连接外网的问题"><a class="header-anchor" href="#关于连接外网的问题">¶</a>关于连接外网的问题</h2>
 <p>全配置正确的话，理论上服务器跟win7都连不上网，毕竟DNS解析到本地了。我的解决方案是在win7网络设置里添加备用DNS（主要DNS就是自己配置的服务器），备用DNS填外网的DNS就行</p>
 
             </div>

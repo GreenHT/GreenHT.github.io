@@ -209,13 +209,13 @@
             
               <p class="note note-info">
                 
-                  本文最后更新于：2 天前
+                  本文最后更新于：4 天前
                 
               </p>
             
             <div class="markdown-body">
-              <h2 id="环境配置">环境配置</h2>
-<h3 id="Apache">Apache</h3>
+              <h2 id="环境配置"><a class="header-anchor" href="#环境配置">¶</a>环境配置</h2>
+<h3 id="Apache"><a class="header-anchor" href="#Apache">¶</a>Apache</h3>
 <p>​	配置文件：安装目录\apache\conf\httpd.conf</p>
 <ul>
 <li>
@@ -233,7 +233,7 @@
 <p><strong>*版本不同可能会有区别*</strong></p>
 </li>
 </ul>
-<h3 id="PHP">PHP</h3>
+<h3 id="PHP"><a class="header-anchor" href="#PHP">¶</a>PHP</h3>
 <p>安装目录\php文件夹\</p>
 <ul>
 <li>
@@ -250,7 +250,7 @@
 <p><strong>*版本不同可能会有区别*</strong></p>
 </li>
 </ul>
-<h3 id="PHP-Apache">PHP+Apache</h3>
+<h3 id="PHP-Apache"><a class="header-anchor" href="#PHP-Apache">¶</a>PHP+Apache</h3>
 <p>在httpd.conf中添加：</p>
 <ol>
 <li>LoadModule php5_module ‘apache支持包路径’  --加载PHP模块</li>
@@ -258,18 +258,18 @@
 <li>AddType application/x-httpd-php .php  --将.php文件分配给PHP解析</li>
 </ol>
 <p><strong>*版本不同可能会有区别*</strong></p>
-<h3 id="MySQL">MySQL</h3>
+<h3 id="MySQL"><a class="header-anchor" href="#MySQL">¶</a>MySQL</h3>
 <ul>
 <li>安装目录下的my.ini为配置文件</li>
 <li>访问数据库命令参数：-h 主机地址，-P 端口，-u 用户名，-p 密码</li>
 </ul>
-<h3 id="PHP-MySQL">PHP+MySQL</h3>
+<h3 id="PHP-MySQL"><a class="header-anchor" href="#PHP-MySQL">¶</a>PHP+MySQL</h3>
 <ol>
 <li>PHP加载MySQL拓展：在php.ini中添加extension=php_mysql.dll，修改extension_dir的值为ext文件夹的绝对路径（PHP版本不同可能有区别）</li>
 </ol>
 <hr>
-<h2 id="PHP语法">PHP语法</h2>
-<h3 id="变量">变量</h3>
+<h2 id="PHP语法"><a class="header-anchor" href="#PHP语法">¶</a>PHP语法</h2>
+<h3 id="变量"><a class="header-anchor" href="#变量">¶</a>变量</h3>
 <ol>
 <li>
 <p>定义变量不需要规定数据类型</p>
@@ -305,7 +305,7 @@
  <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-variable">$a</span> = <span class="hljs-number">1</span>;<br><span class="hljs-variable">$b</span> = <span class="hljs-variable">$a</span>;	<span class="hljs-comment">//值传递，将a值复制一份给b</span><br><span class="hljs-variable">$c</span> = &amp;<span class="hljs-variable">$a</span>;	<span class="hljs-comment">//引用传递，指向同一个值（内存空间）</span><br></code></pre></td></tr></table></figure>
 </li>
 </ol>
-<h3 id="常量">常量</h3>
+<h3 id="常量"><a class="header-anchor" href="#常量">¶</a>常量</h3>
 <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-comment">//使用define函数定义</span><br>define(<span class="hljs-string">&#x27;PI&#x27;</span>,<span class="hljs-number">3.14</span>,(<span class="hljs-literal">false</span>));	<span class="hljs-comment">//最后的false表示大小写敏感，可省略；若定义为true则大小写不敏感</span><br><br><span class="hljs-comment">//使用const关键字定义</span><br><span class="hljs-keyword">const</span> PII = <span class="hljs-number">3</span>;<br><br><span class="hljs-comment">//使用define函数定义特殊常量</span><br>define(<span class="hljs-string">&#x27;&gt;_&lt;&#x27;</span>,<span class="hljs-string">&#x27;smile&#x27;</span>);<br><br><span class="hljs-comment">//使用常量</span><br><span class="hljs-keyword">echo</span> PI;<br><br><span class="hljs-comment">//用constant函数访问常量</span><br><span class="hljs-keyword">echo</span> constant(<span class="hljs-string">&#x27;&gt;_&lt;&#x27;</span>);<br></code></pre></td></tr></table></figure>
 <ol>
 <li>常量名字不用$符号（会被系统当作变量）</li>
@@ -323,8 +323,8 @@
 </ul>
 </li>
 </ol>
-<h3 id="数据类型与运算符">数据类型与运算符</h3>
-<h4 id="数据类型">数据类型</h4>
+<h3 id="数据类型与运算符"><a class="header-anchor" href="#数据类型与运算符">¶</a>数据类型与运算符</h3>
+<h4 id="数据类型"><a class="header-anchor" href="#数据类型">¶</a>数据类型</h4>
 <ul>
 <li>
 <p>简单（基本）数据类型</p>
@@ -405,7 +405,7 @@
 <p>位运算符：“&amp;“按位与，两个位都为1则为1；”|“按位或，两个位有一个为1则为1；”~“按位非，将位取反；”^“按位异或，两个位相同为0，不同为1；”&lt;&lt;“按位左移，右边补0；”&gt;&gt;”，按位右移，左边补符号位内容</p>
 </li>
 </ul>
-<h3 id="流程控制">流程控制</h3>
+<h3 id="流程控制"><a class="header-anchor" href="#流程控制">¶</a>流程控制</h3>
 <ul>
 <li>
 <p>if结构，while循环，du-while循环，for循环，switch结构与C语言大体相同</p>
@@ -416,7 +416,7 @@
   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs php+HTML">&lt;table border&#x3D;1&gt;<br>    &lt;?php for($i &#x3D; 1;$i &lt; 10;$i++):		&#x2F;&#x2F;for循环的大括号可由 : 与 endfor; 代替 ?&gt;<br>    &lt;tr&gt;<br>        &lt;?php for($j &#x3D; 1;$j &lt;&#x3D; $i;$j++): ?&gt;<br>        &lt;td&gt;<br>            &lt;?php echo $i . &#39; * &#39; . $j . &#39; &#x3D; &#39;. $i * $j; ?&gt;<br>        &lt;&#x2F;td&gt;<br>        &lt;?php endfor;?&gt;<br>    &lt;&#x2F;tr&gt;<br>    &lt;?php endfor;?&gt;<br>&lt;&#x2F;table&gt;<br>&lt;!--	相似的结构还有if,switch,while,foreach	--&gt;<br></code></pre></td></tr></table></figure>
 </li>
 </ul>
-<h3 id="文件包含">文件包含</h3>
+<h3 id="文件包含"><a class="header-anchor" href="#文件包含">¶</a>文件包含</h3>
 <p>实质上是将文件中内容嵌入另一文件中相应位置</p>
 <ol>
 <li>
@@ -445,8 +445,8 @@
 <p>在包含文件出错时，include报错级别较低，后面代码会继续执行；require报错级别较高，代码会立即停止执行</p>
 </li>
 </ol>
-<h3 id="函数">函数</h3>
-<h4 id="函数定义">函数定义</h4>
+<h3 id="函数"><a class="header-anchor" href="#函数">¶</a>函数</h3>
+<h4 id="函数定义"><a class="header-anchor" href="#函数定义">¶</a>函数定义</h4>
 <p>function，一种语法结构，将一个代码块封装到一个结构中。</p>
 <p>关键点：function关键字，函数名，参数，函数体，返回值</p>
 <p>基本语法：</p>
@@ -467,7 +467,7 @@
 <p>如果有变量的值恰好为函数名，那么调用函数可以通过变量+()，如：$变量([参数])</p>
 </li>
 </ol>
-<h4 id="作用域">作用域</h4>
+<h4 id="作用域"><a class="header-anchor" href="#作用域">¶</a>作用域</h4>
 <ol>
 <li>全局变量：在函数外部定义的变量，函数体内不能直接访问，需要传值</li>
 <li>局部变量：在函数内部定义的变量，只能在函数体内使用</li>
@@ -475,7 +475,7 @@
 <li>在函数内使用global关键字定义的变量，在函数外部也能使用（系统自动在全局区定义相同变量，并将两个变量指向同一内存空间）；若函数外部存在同名变量，系统自动将两个变量合并（直接指向外部全局变量内存空间）</li>
 <li>静态变量：在函数中用static关键字定义的变量（在定义时应同时赋值），在函数调用结束后，内存空间不会被清空，在函数下次调用时仍可访问之前的数据，且不会被重复初始化</li>
 </ol>
-<h4 id="匿名函数">匿名函数</h4>
+<h4 id="匿名函数"><a class="header-anchor" href="#匿名函数">¶</a>匿名函数</h4>
 <p>没有名字的函数</p>
 <ul>
 <li>
@@ -486,7 +486,7 @@
 <p>变量保存匿名函数，本质上得到的是一个对象（closure）</p>
 </li>
 </ul>
-<h4 id="常用系统函数">常用系统函数</h4>
+<h4 id="常用系统函数"><a class="header-anchor" href="#常用系统函数">¶</a>常用系统函数</h4>
 <ol>
 <li>有关输出的函数
 <ul>
@@ -523,8 +523,8 @@
 </ul>
 </li>
 </ol>
-<h3 id="错误处理">错误处理</h3>
-<h4 id="错误代号">错误代号</h4>
+<h3 id="错误处理"><a class="header-anchor" href="#错误处理">¶</a>错误处理</h3>
+<h4 id="错误代号"><a class="header-anchor" href="#错误代号">¶</a>错误代号</h4>
 <p>所有错误代码会被系统定义为系统常量，可以直接使用</p>
 <ol>
 <li>系统错误
@@ -541,7 +541,7 @@
 <p>所有以E开头的错误常量（代号）都存储在一个字节内，每种占据一个位，所以可以通过位运算来进行一些错误的控制，例：</p>
 <p>排除通知级别的错误：E_ALL &amp; ~E_NOTICE</p>
 <p>只要警告和通知级别：E_WARNING | E_NOTICE</p>
-<h4 id="错误触发">错误触发</h4>
+<h4 id="错误触发"><a class="header-anchor" href="#错误触发">¶</a>错误触发</h4>
 <ul>
 <li>程序运行时触发：主要针对代码语法错误和运行时错误，由系统自动生成</li>
 <li>人为触发：人为使用对应判断代码来触发错误提示
@@ -550,8 +550,8 @@
 </ul>
 </li>
 </ul>
-<h3 id="字符串">字符串</h3>
-<h4 id="字符串定义">字符串定义</h4>
+<h3 id="字符串"><a class="header-anchor" href="#字符串">¶</a>字符串</h3>
+<h4 id="字符串定义"><a class="header-anchor" href="#字符串定义">¶</a>字符串定义</h4>
 <ol>
 <li>
 <p>普通定义：使用单引号或双引号包裹</p>
@@ -569,7 +569,7 @@
 <li>普通定义中，使用单引号包裹的字符串只能识别 \’ 转义字符，其他转义字符原样输出；使用双引号包裹的字符串只识别不了 \’ 转义字符，其他转义字符按转义后形态输出——也就是说，双引号包裹的字符串中当$符号未转义时，可以用来解析变量（前提是系统能区分变量与其后面的字符串，而不是连在一起，比如$a bcd与$abcd）</li>
 <li>结构化定义中，边界符之间的内容全部原样输出</li>
 </ol>
-<h4 id="字符串长度问题">字符串长度问题</h4>
+<h4 id="字符串长度问题"><a class="header-anchor" href="#字符串长度问题">¶</a>字符串长度问题</h4>
 <ol>
 <li>基本函数<code>strlen()</code>：得到字符串的长度（单位：字节）</li>
 <li>多字节字符串长度问题：中文在utf-8字符集下占3个字节</li>
@@ -579,7 +579,7 @@
 </ul>
 </li>
 </ol>
-<h4 id="字符串相关函数">字符串相关函数</h4>
+<h4 id="字符串相关函数"><a class="header-anchor" href="#字符串相关函数">¶</a>字符串相关函数</h4>
 <ul>
 <li>转换函数：implode(),explode(),str_split()</li>
 <li>截取函数：trim(),ltrim(),rtrim(),substr(),strstr()</li>
@@ -589,8 +589,8 @@
 <li>格式化函数：printf(),sprintf()</li>
 <li>其他：str_repeat(),str_shuffle()</li>
 </ul>
-<h3 id="数组">数组</h3>
-<h4 id="数组定义">数组定义</h4>
+<h3 id="数组"><a class="header-anchor" href="#数组">¶</a>数组</h3>
+<h4 id="数组定义"><a class="header-anchor" href="#数组定义">¶</a>数组定义</h4>
 <ol>
 <li>
 <p>使用array关键字（常用）</p>
@@ -613,9 +613,9 @@
 <li>php中数组元素没有类型限制，没有长度限制</li>
 </ol>
 <p>PHP多维数组：即数组元素也是数组，建议不超过三维</p>
-<h4 id="数组遍历">数组遍历</h4>
+<h4 id="数组遍历"><a class="header-anchor" href="#数组遍历">¶</a>数组遍历</h4>
 <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-keyword">foreach</span>($数组 <span class="hljs-keyword">as</span> [$下标 =&gt;] $值)&#123;<br>    <span class="hljs-comment">//输出函数</span><br>&#125;<br><span class="hljs-comment">//例：</span><br><span class="hljs-keyword">foreach</span>(<span class="hljs-variable">$arr</span> <span class="hljs-keyword">as</span> <span class="hljs-variable">$k</span> =&gt; <span class="hljs-variable">$v</span>)<br>&#123;<br>    <span class="hljs-keyword">echo</span> <span class="hljs-variable">$k</span> , <span class="hljs-string">&#x27;==&#x27;</span> , <span class="hljs-variable">$v</span>		<span class="hljs-comment">//$k,$v为函数内变量</span><br>&#125;<br></code></pre></td></tr></table></figure>
-<h4 id="数组相关函数">数组相关函数</h4>
+<h4 id="数组相关函数"><a class="header-anchor" href="#数组相关函数">¶</a>数组相关函数</h4>
 <ol>
 <li>排序函数：sort(),rsort(),arsort(),ksort(),shuffle()</li>
 <li>指针函数：reset(),end(),next(),prev(),current(),key()</li>
@@ -638,9 +638,9 @@
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/GreenHT.github.io/tags/%E7%BD%91%E7%BB%9C/">网络</a>
-                    
                       <a class="hover-with-bg" href="/GreenHT.github.io/tags/%E7%BC%96%E7%A8%8B/">编程</a>
+                    
+                      <a class="hover-with-bg" href="/GreenHT.github.io/tags/%E7%BD%91%E7%BB%9C/">网络</a>
                     
                   </div>
                 
