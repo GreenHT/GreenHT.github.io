@@ -1,0 +1,618 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/GreenHT.github.io/img/favicon.png">
+  <link rel="icon" type="image/png" href="/GreenHT.github.io/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
+  <meta name="theme-color" content="#4c74a5">
+  <meta name="description" content="">
+  <meta name="author" content="GreenHT">
+  <meta name="keywords" content="">
+  <title>前端学习笔记之HTML5 - GreenHT的小本本</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/GreenHT.github.io/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.4.0/styles/rainbow.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/GreenHT.github.io/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"greenht.github.io","root":"/GreenHT.github.io/","version":"1.8.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":"#"},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":false,"onlypost":false},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+  </script>
+  <script  src="/GreenHT.github.io/js/utils.js" ></script>
+  <script  src="/GreenHT.github.io/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/GreenHT.github.io/">&nbsp;<strong>GreenHT的小本本</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/GreenHT.github.io/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/GreenHT.github.io/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/GreenHT.github.io/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/GreenHT.github.io/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/GreenHT.github.io/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/GreenHT.github.io/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="前端学习笔记之HTML5">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-03-11 20:38" pubdate>
+        2021年3月11日 晚上
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      1.5k 字
+    </span>
+  
+
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">前端学习笔记之HTML5</h1>
+            
+              <p class="note note-info">
+                
+                  本文最后更新于：几秒前
+                
+              </p>
+            
+            <div class="markdown-body">
+              <h2 id="Web标准"><a class="header-anchor" href="#Web标准">¶</a>Web标准</h2>
+<ul>
+<li>结构：用于对网页元素进行整理和分类，现阶段主要是HTML</li>
+<li>表现：用于设置网页的外观样式，主要指CSS</li>
+<li>行为：指网页模型的定义及交互，现阶段主要是JavaScript</li>
+</ul>
+<p><strong>Web标准提出的最佳体验方案：</strong> 结构、样式、行为相分离。</p>
+<h2 id="基本语法概述"><a class="header-anchor" href="#基本语法概述">¶</a>基本语法概述</h2>
+<ol>
+<li>HTML标签由尖括号包裹</li>
+<li>HTML标签通常成对出现，标签对中的第一个标签为开始标签，第二个带斜杠的为结束标签，例如<code>&lt;html&gt;&lt;/html&gt;</code></li>
+<li>有些标签为单标签，如：<code>&lt;br/&gt;</code></li>
+<li>标签之间有嵌套关系也有并列关系</li>
+</ol>
+<h2 id="HTML页面结构"><a class="header-anchor" href="#HTML页面结构">¶</a>HTML页面结构</h2>
+<h3 id="基本结构标签"><a class="header-anchor" href="#基本结构标签">¶</a>基本结构标签</h3>
+<p><strong>文档类型声明标签</strong></p>
+<p><code>&lt;!DOCTYPE html&gt;</code>放在整个HTML文档的最前面，本质上不属于HTML标签，用来告诉浏览器当前文档的类型，示例中代表文档类型为HTML5</p>
+<p><strong>根标签</strong></p>
+<p><code>&lt;html&gt;&lt;/html&gt;</code>页面中最大的标签，标签里放整个HTML文档的内容</p>
+<p>其中开始标签中经常会加上指定文档语言的说明，如：<code>&lt;html lang=&quot;zh-CN&quot;&gt;</code>，实际上就算指定为英文网页也是可以显示中文的，这个属性一般会对搜索引擎有影响</p>
+<p><strong>头部标签</strong></p>
+<p><code>&lt;head&gt;&lt;/head&gt;</code>HTML文档的头部，内容一般不显示在网页上</p>
+<p><strong>字符集声明标签</strong></p>
+<p><code>&lt;meta charset=&quot;UTF-8&quot;&gt;</code>声明当前HTML文档存储的字符集，放在head标签中，<strong>重要</strong></p>
+<p><strong>标题标签</strong></p>
+<p><code>&lt;title&gt;&lt;/title&gt;</code>HTML文档的标题，放在头部标签中</p>
+<p><strong>主体标签</strong></p>
+<p><code>&lt;body&gt;&lt;/body&gt;</code>HTML文档的主体，页面内容基本都是放在body标签里</p>
+<h3 id="块元素"><a class="header-anchor" href="#块元素">¶</a>块元素</h3>
+<p>块元素包含整个大区域的内容</p>
+<p><strong>标题标签（重要）</strong></p>
+<p><code>&lt;h1&gt;&lt;/h1&gt;</code>标题共有6级（h1--h6），重要性依次递减，加了标题标签的文字会加大加粗，且在页面显示效果中一个标题独占一行</p>
+<p><strong>段落标签</strong></p>
+<p><code>&lt;p&gt;&lt;/p&gt;</code>段落标签中的文字就是一个段落，段与段之间会有空隙，在没有手动换行的情况下，段落中的文字会根据浏览器的大小自动换行</p>
+<p><strong>水平线</strong></p>
+<p><code>&lt;hr /&gt;</code>水平线标签</p>
+<p><strong>HTML注释</strong></p>
+<p><code>&lt;!-注释内容--&gt;</code>注释内容不显示在网页上</p>
+<p><strong>无序列表</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>元素1<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>元素2<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<p>无序列表与无序列表可以嵌套，每个元素前面是一个小点（无序）</p>
+<p><strong>有序列表</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">ol</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>元素1<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>元素2<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">ol</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<p>有序列表前面是元素的序号</p>
+<p><strong>表格</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">table</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">caption</span>&gt;</span>表标题<span class="hljs-tag">&lt;/<span class="hljs-name">caption</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>列标题1<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>列标题2<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>单元格<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>单元格<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">table</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<p>table：表格，caption：表标题，tr：行，td：单元格，th：列标题</p>
+<p>table的属性：</p>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>border</td>
+<td>数值（单位：像素）</td>
+<td>规定表格边框的宽度</td>
+</tr>
+<tr>
+<td>cellpadding</td>
+<td>数值（单位：像素）或百分比</td>
+<td>规定单元边沿与其内容之间的空白</td>
+</tr>
+<tr>
+<td>cellspacing</td>
+<td>数值（单位：像素）或百分比</td>
+<td>规定单元格之间的空白</td>
+</tr>
+<tr>
+<td>width</td>
+<td>数值（单位：像素）或百分比</td>
+<td>规定表格的宽度</td>
+</tr>
+</tbody>
+</table>
+<p><code>th</code>的属性（可选）</p>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>colspan</td>
+<td>数值</td>
+<td>跨列居中（合并居中）</td>
+</tr>
+<tr>
+<td>rowspan</td>
+<td>数值</td>
+<td>跨行居中（合并居中）</td>
+</tr>
+</tbody>
+</table>
+<p><strong>引用（块引用）</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">blockquote</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br>        示例文本<br>    <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">blockquote</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<p>块引用内格式与引用外独立</p>
+<p><strong>预格式化文本</strong></p>
+<p><code>&lt;pre&gt;&lt;/pre&gt;</code>将块内的内容按照原格式原样输出</p>
+<p><strong>音视频</strong></p>
+<p><code>&lt;audio&gt;提示内容&lt;/audio&gt;</code>播放音频，提示内容为浏览器无法播放时的提示信息</p>
+<p>播放格式：mp3、wav等</p>
+<p><img src="/images/html-1.png" alt="audioConfigs"></p>
+<p><code>&lt;video&gt;提示内容&lt;/video&gt;</code>播放视频，提示内容为浏览器无法播放时的提示内容</p>
+<p>播放格式：mp4、ogg、webm、mkv等</p>
+<p><img src="/images/html-2.png" alt="videoConfigs"></p>
+<p><strong>div和span分区标签</strong></p>
+<p><code>&lt;div&gt;&lt;/div&gt;</code>一个div标签独占一行，即横向分区</p>
+<p><code>&lt;span&gt;&lt;/span&gt;</code>span标签为纵向分区</p>
+<h3 id="行内元素"><a class="header-anchor" href="#行内元素">¶</a>行内元素</h3>
+<p>行内元素影响少量的内容，<strong>必须嵌套在块元素中</strong></p>
+<p><strong>图像标签</strong></p>
+<p><code>&lt;img src=&quot;图像URL&quot; /&gt;</code>单标签</p>
+<p>图像标签的其他属性：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">属性</th>
+<th>属性值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">src</td>
+<td>图片路径</td>
+<td>略（必填）</td>
+</tr>
+<tr>
+<td style="text-align:left">alt</td>
+<td>文本</td>
+<td>当图片不能显示时的替换文字</td>
+</tr>
+<tr>
+<td style="text-align:left">title</td>
+<td>文本</td>
+<td>将光标放到图片上时的提示文字</td>
+</tr>
+<tr>
+<td style="text-align:left">width</td>
+<td>数值（单位：像素）</td>
+<td>设置图片的宽度</td>
+</tr>
+<tr>
+<td style="text-align:left">height</td>
+<td>数值（单位：像素）</td>
+<td>设置图片的高度</td>
+</tr>
+<tr>
+<td style="text-align:left">border</td>
+<td>数值（单位：像素）</td>
+<td>设置图片的边框粗细</td>
+</tr>
+</tbody>
+</table>
+<p><strong>链接标签</strong></p>
+<p><code>&lt;a href=&quot;URL&quot;&gt;文本&lt;/a&gt;</code>双标签，标签中间写显示在页面上的可以点击的文本，标签内的href属性中为目标URL，可以为绝对或相对URL</p>
+<p><strong>强制换行</strong></p>
+<p><code>&lt;br /&gt;</code>换行标签，在标签处换行</p>
+<p><strong>文字格式化标签</strong></p>
+<p><code>&lt;strong&gt;&lt;/strong&gt;</code> 或 <code>&lt;b&gt;&lt;/b&gt;</code>文字加粗</p>
+<p><code>&lt;em&gt;&lt;/em&gt;</code> 或 <code>&lt;i&gt;&lt;/i&gt;</code>文字倾斜</p>
+<p><code>&lt;del&gt;&lt;/del&gt;</code> 或 <code>&lt;s&gt;&lt;/s&gt;</code>删除线</p>
+<p><code>&lt;ins&gt;&lt;/ins&gt;</code> 或 <code>&lt;u&gt;&lt;/u&gt;</code>下划线</p>
+<p><strong>引用（行内引用）</strong></p>
+<p><code>&lt;q&gt;&lt;/q&gt;</code>在行内使用，被引用的内容会被加上引号</p>
+<p><strong>字符实体</strong></p>
+<p>在HTML中显示一些特殊符号时需要用字符实体，如<code>&lt;&gt;&amp;</code>和多个空格，有两种方式：</p>
+<ul>
+<li>用实体名：<code>&amp;实体名</code></li>
+<li>用实体数字：<code>&amp;#实体数</code></li>
+</ul>
+<p>具体实体对应的字符此处略</p>
+<p><strong>预格式化文本--计算机代码</strong></p>
+<p><code>&lt;code&gt;&lt;/code&gt;</code>将文本在类似于代码框中显示</p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/GreenHT.github.io/categories/programming/">编程</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/GreenHT.github.io/tags/%E7%BD%91%E7%BB%9C/">网络</a>
+                    
+                      <a class="hover-with-bg" href="/GreenHT.github.io/tags/%E7%BC%96%E7%A8%8B/">编程</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/GreenHT.github.io/other/20210306/hexoSetup/">
+                        <span class="hidden-mobile">Hexo搭建Github Page实录</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+<!-- SCRIPTS -->
+
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
+<script  src="/GreenHT.github.io/js/debouncer.js" ></script>
+<script  src="/GreenHT.github.io/js/events.js" ></script>
+<script  src="/GreenHT.github.io/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.0/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.0/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js" ></script>
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+  <script  src="/GreenHT.github.io/js/local-search.js" ></script>
+  <script>
+    (function () {
+      var path = "/GreenHT.github.io/local-search.xml";
+      var inputArea = document.querySelector("#local-search-input");
+      inputArea.onclick = function () {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+        this.onclick = null
+      }
+    })()
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/GreenHT.github.io/js/boot.js" ></script>
+
+
+
+</body>
+</html>
