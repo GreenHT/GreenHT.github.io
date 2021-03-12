@@ -183,26 +183,22 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/GreenHT.github.io/programming/20210311/htmlNotes/">前端学习笔记之HTML5</a>
+        <a href="/GreenHT.github.io/other/20210226/setupwinsvr2019/">Windows Server 2019虚拟机搭建域环境记录</a>
       </h1>
 
       <p class="index-excerpt">
-        <a href="/GreenHT.github.io/programming/20210311/htmlNotes/">
+        <a href="/GreenHT.github.io/other/20210226/setupwinsvr2019/">
           
           
             
           
-          ¶Web标准
+          任务是在虚拟机环境中搭建域环境，使得虚拟机中的win7和winserver互相能ping通，且win7端ping域名也能通，研究了一下午，将遇到的各种问题与解决方案记录一下
+¶安装并配置WinServer2019
 
-结构：用于对网页元素进行整理和分类，现阶段主要是HTML
-表现：用于设置网页的外观样式，主要指CSS
-行为：指网页模型的定义及交互，现阶段主要是JavaScript
+VMware安装WindowsServer2019，镜像可以从msdn.itellyou.cn上找
+配置网络环境
 
-Web标准提出的最佳体验方案： 结构、样式、行为相分离。
-¶基本语法概述
-
-HTML标签由尖括号包裹
-HTML标签通常成对出现，标签对中的第一个标签为开始标签，第二个带斜杠的为结束标签，例如&lt;html&gt;&
+先把服务器设置为固定IP，由于使用的是VMware的NAT模式，所以
         </a>
       </p>
 
@@ -210,63 +206,8 @@ HTML标签通常成对出现，标签对中的第一个标签为开始标签，�
         
           <div class="post-meta mr-3">
             <i class="iconfont icon-date"></i>
-            <time datetime="2021-03-11 20:38" pubdate>
-              2021-03-11
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-category"></i>
-            
-              <a href="/GreenHT.github.io/categories/programming/">编程</a>
-            
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/GreenHT.github.io/tags/%E7%BD%91%E7%BB%9C/">网络</a>
-            
-              <a href="/GreenHT.github.io/tags/%E7%BC%96%E7%A8%8B/">编程</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/GreenHT.github.io/other/20210306/hexoSetup/">Hexo搭建Github Page实录</a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/GreenHT.github.io/other/20210306/hexoSetup/">
-          
-          
-            
-          
-          今天研究了下用hexo框架搭建Github Page，按照网上的教程来弄或多或少有一些问题，也没有找到合适的完整的解决方法，所以自己记录了一下过程
-¶安装环境
-不管是在Windows环境下还是Linux环境下都要先安装Node.js和Git，安装过程略，这里记录一下Windows环境
-¶安装Hexo
-npm install -g hexo-cli
-这个步骤打开命令行执行就行，安装文件会下载到Nod
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2021-03-06 11:25" pubdate>
-              2021-03-06
+            <time datetime="2021-02-26 16:02" pubdate>
+              2021-02-26
             </time>
           </div>
         
@@ -284,251 +225,9 @@ npm install -g hexo-cli
             
               <a href="/GreenHT.github.io/tags/%E7%BD%91%E7%BB%9C/">网络</a>
             
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/GreenHT.github.io/other/20210303/dockerCmds/">Docker常用命令</a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/GreenHT.github.io/other/20210303/dockerCmds/">
-          
-          
+              <a href="/GreenHT.github.io/tags/windows/">windows</a>
             
-          
-          ¶Docker镜像
-使用docker pull下载一个镜像
-1docker pull ubuntu:13.10
-这里的:13.10表示tag，即版本号，未指定时使用默认的latest（最新）
-使用docker images列出本地的所有镜像
-使用docker rmi删除本地镜像
-1docker rmi ubuntu
-为镜像重新指定tag
-12docker tag 860c279d2fec runo
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2021-03-03 19:45" pubdate>
-              2021-03-03
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-category"></i>
-            
-              <a href="/GreenHT.github.io/categories/other/">其他</a>
-            
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/GreenHT.github.io/tags/docker/">docker</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/GreenHT.github.io/other/20210301/gitNotes/">Git学习笔记</a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/GreenHT.github.io/other/20210301/gitNotes/">
-          
-          
-            
-          
-          Git是一个分布式版本控制工具，与集中式的SVN区别开
-Git的大致流程如图
-
-
-先从远程仓库将代码克隆（Clone）到本地仓库
-要干活的时候就把代码提取（checkout）到工作区，弄完以后暂存到暂存区，最后统一保存本地仓库里
-可以将成果同步（Push）到远程仓库
-可以把别人的修改同步（Pull）到本地
-
-¶仓库管理基本操作（本地）
-
-
-在目标文件夹中初始化仓库    git init
-
-
-查看
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2021-03-01 18:22" pubdate>
-              2021-03-01
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-category"></i>
-            
-              <a href="/GreenHT.github.io/categories/other/">其他</a>
-            
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/GreenHT.github.io/tags/Git/">Git</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/GreenHT.github.io/netsafe/20210227/sqlinjectionNotes/">SQL注入入门笔记</a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/GreenHT.github.io/netsafe/20210227/sqlinjectionNotes/">
-          
-          
-            
-          
-          ¶注入判断
-¶数值型
-方法：URL后面输入 and 1=1 / and 1=2后页面回显不同（前提是页面上有回显的地方）
-当输入1=1时页面正常，1=2时页面出错，说明为数值型注入
-原理：后台脚本中提交的sql语句为类似 select * from &lt;表名&gt; where id = x 的语句，通过get方式提交用户输入的数值来改变语句中的x，没有引号
-¶字符型
-方法：URL后面输入正常
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2021-02-27 10:38" pubdate>
-              2021-02-27
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-category"></i>
-            
-              <a href="/GreenHT.github.io/categories/netsafe/">网络安全</a>
-            
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/GreenHT.github.io/tags/%E7%BD%91%E7%BB%9C/">网络</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/GreenHT.github.io/programming/20210227/phpNotes/">PHP学习笔记</a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/GreenHT.github.io/programming/20210227/phpNotes/">
-          
-          
-            
-          
-          ¶环境配置
-¶Apache
-​	配置文件：安装目录\apache\conf\httpd.conf
-
-
-DocumentRoot：默认站点
-
-
-ServerName：设置服务器用于辨识自己的主机名和端口号
-
-
-LoadModule：加载模块
-
-
-Listen：定义apache监听的端口
-搭建基于域名的虚拟主机教程略
-*版本不同可能会有区别*
-
-
-¶PHP
-安装目录\php文件夹\
-
-
-ext文件夹：
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2021-02-27 10:34" pubdate>
-              2021-02-27
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-category"></i>
-            
-              <a href="/GreenHT.github.io/categories/programming/">编程</a>
-            
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/GreenHT.github.io/tags/%E7%BD%91%E7%BB%9C/">网络</a>
-            
-              <a href="/GreenHT.github.io/tags/%E7%BC%96%E7%A8%8B/">编程</a>
+              <a href="/GreenHT.github.io/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/">虚拟机</a>
             
           </div>
         
@@ -540,7 +239,7 @@ ext文件夹：
 
   <nav aria-label="navigation">
     <span class="pagination" id="pagination">
-      <span class="page-number current">1</span><a class="page-number" href="/GreenHT.github.io/page/2/">2</a><a class="extend next" rel="next" href="/GreenHT.github.io/page/2/"><i class="iconfont icon-arrowright"></i></a>
+      <a class="extend prev" rel="prev" href="/GreenHT.github.io/"><i class="iconfont icon-arrowleft"></i></a><a class="page-number" href="/GreenHT.github.io/">1</a><span class="page-number current">2</span>
     </span>
   </nav>
   
